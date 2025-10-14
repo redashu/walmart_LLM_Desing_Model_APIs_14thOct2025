@@ -91,3 +91,9 @@ if __name__ == "__main__":
     # Bind to 0.0.0.0 so the container/devcontainer host can reach it
     app.run(host="0.0.0.0", port=5001, debug=True)
 ```
+
+### task final day1 to be completed
+
+<img src="task1.png">
+
+
