@@ -59,3 +59,35 @@ Press CTRL+C to quit
 127.0.0.1 - - [14/Oct/2025 17:30:50] "GET /json HTTP/1.1" 200 -
 
 ```
+
+
+https://reimagined-journey-r4gv7x45g6f5744.github.dev/
+
+
+https://reimagined-journey-r4gv7x45g6f5744-5001.app.github.dev/
+
+
+### sample app.py code 
+
+```
+from flask import Flask, jsonify, render_template
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    return "Hello, World!"
+
+@app.route("/json")
+def hello_json():
+    return jsonify(message="Hello, World!")
+
+# create /home route which must run index.html in templates folder
+@app.route("/home")
+def home():
+    return render_template("index.html")
+
+if __name__ == "__main__":
+    # Bind to 0.0.0.0 so the container/devcontainer host can reach it
+    app.run(host="0.0.0.0", port=5001, debug=True)
+```
