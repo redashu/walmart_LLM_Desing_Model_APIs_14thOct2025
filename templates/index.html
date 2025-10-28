@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Walmart LLM Application{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <h1>Welcome to Walmart LLM Application</h1>
+        <p>This is a demonstration application featuring:</p>
+        <ul style="margin-left: 20px; margin-top: 15px; line-height: 1.8;">
+            <li>User authentication system</li>
+            <li>BLU - An intelligent chatbot assistant</li>
+            <li>JSON data visualization</li>
+            <li>User profile management</li>
+        </ul>
+        
+        {% if session.username %}
+            <div style="margin-top: 30px; padding: 20px; background-color: #e8f5e9; border-radius: 8px;">
+                <h3 style="color: #2e7d32; margin-bottom: 10px;">Welcome back, {{ session.username }}!</h3>
+                <p>You can now access all features of the application.</p>
+                <div style="margin-top: 15px;">
+                    <a href="{{ url_for('chatbot') }}" class="btn" style="display: inline-block; width: auto; margin-right: 10px;">
+                        Chat with BLU
+                    </a>
+                </div>
+            </div>
+        {% else %}
+            <div style="margin-top: 30px; padding: 20px; background-color: #fff3e0; border-radius: 8px;">
+                <h3 style="color: #e65100; margin-bottom: 10px;">Get Started</h3>
+                <p>Please login to access all features.</p>
+                <div style="margin-top: 15px;">
+                    <a href="{{ url_for('login') }}" class="btn" style="display: inline-block; width: auto;">
+                        Login Now
+                    </a>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+    
+    <div class="card">
+        <h2>About BLU Chatbot</h2>
+        <p>BLU is your personal Walmart assistant that can help you with:</p>
+        <ul style="margin-left: 20px; margin-top: 15px; line-height: 1.8;">
+            <li>Product information and recommendations</li>
+            <li>Store locations and hours</li>
+            <li>Return policies and customer service</li>
+            <li>General queries about Walmart services</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

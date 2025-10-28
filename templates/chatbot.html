@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}BLU Chatbot - Walmart LLM Application{% endblock %}
+
+{% block content %}
+<div class="chat-container">
+    <div class="chat-header">
+        <h2>BLU - Walmart Assistant</h2>
+        <p style="margin: 5px 0 0 0; font-size: 14px;">Ask me anything about Walmart!</p>
+    </div>
+    
+    <div class="chat-messages" id="chat-messages">
+        <!-- Messages will be added here dynamically -->
+    </div>
+    
+    <div class="chat-input-container">
+        <form id="chat-form" class="chat-input-form">
+            <input 
+                type="text" 
+                id="chat-input" 
+                class="chat-input" 
+                placeholder="Type your message here..." 
+                autocomplete="off"
+                required
+            >
+            <button type="submit" class="chat-send-btn">Send</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+{% endblock %}
