@@ -6,6 +6,7 @@
 
 ## 
 
+```
 from openai import OpenAI
 ashu_api_key = "" 
 client = OpenAI(api_key=ashu_api_key)
@@ -21,3 +22,5 @@ response = client.chat.completions.create(
 )
 
 print(response.choices[0].message.content)
+
+```
